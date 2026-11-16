@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kent Andrei Dominique Tan | IT Support and Service Desk</title>
+<meta name="description" content="Portfolio of Kent Tan, IT Support and Service Desk professional with Zendesk, HubSpot and remote support experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000;
+  --ink:#10222e;
+  --sky:#bfe3fa;
+  --mist:#eaf5fd;
+  --blue:#1f7fc4;
+  --white:#fff;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font-family:var(--body);font-size:1.05rem;line-height:1.65;color:var(--ink);background:var(--mist)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.1}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--black);color:var(--sky)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+nav .logo{font-family:var(--head);font-weight:800;text-decoration:none;font-size:1.1rem}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.95rem}
+nav ul a{text-decoration:none;opacity:.85}
+nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px}
+
+/* hero */
+.hero{background:var(--black);color:var(--white);padding:72px 0 88px}
+.hero .wrap{display:grid;grid-template-columns:1fr 260px;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;color:var(--sky);letter-spacing:-.02em}
+.hero .role{font-family:var(--head);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:500;margin-top:14px}
+.hero p.lead{max-width:56ch;margin-top:22px;color:#d6e6f1}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--sky)}
+.btn.primary{background:var(--sky);color:var(--black)}
+.btn.primary:hover{background:var(--white);border-color:var(--white)}
+.btn.ghost{color:var(--sky)}
+.btn.ghost:hover{background:var(--sky);color:var(--black)}
+.photo{width:260px;height:260px;border-radius:50%;background:var(--sky);color:var(--black);display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:4.5rem;overflow:hidden;position:relative;justify-self:center}
+.photo img{position:absolute;inset:0;width:100%;height:125%;object-fit:cover}
+
+/* facts strip */
+.facts{background:var(--sky);color:var(--black)}
+.facts .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:26px;padding-bottom:26px}
+.facts strong{display:block;font-family:var(--head);font-size:1.5rem;line-height:1.2}
+.facts span{font-size:.95rem}
+
+/* sections */
+section{padding:72px 0}
+section h2{font-size:clamp(1.9rem,4vw,2.6rem);font-weight:800;color:var(--black);margin-bottom:34px}
+section h2::after{content:"";display:block;width:56px;height:6px;background:var(--blue);margin-top:12px;border-radius:3px}
+.alt{background:var(--white)}
+
+/* experience timeline */
+.timeline{border-left:3px solid var(--sky);padding-left:28px;display:grid;gap:40px}
+.job{position:relative}
+.job::before{content:"";position:absolute;left:-38px;top:8px;width:13px;height:13px;border-radius:50%;background:var(--black);border:3px solid var(--sky);box-sizing:content-box;margin-left:-3px}
+.job h3{font-size:1.4rem;color:var(--black)}
+.job .org{font-weight:600;color:var(--blue)}
+.job .when{font-size:.95rem;opacity:.75;margin-bottom:10px}
+.job ul{margin-left:20px;max-width:70ch}
+.job li{margin-bottom:6px}
+
+/* projects */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:var(--mist);border:2px solid var(--black);border-radius:14px;padding:28px}
+.card h3{font-size:1.3rem;color:var(--black)}
+.card .tag{display:inline-block;background:var(--black);color:var(--sky);font-size:.85rem;font-weight:600;padding:3px 12px;border-radius:999px;margin:10px 0 14px}
+.card ul{margin-left:20px}
+.card li{margin-bottom:4px}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.skillgrid h3{font-size:1.15rem;color:var(--black);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{background:var(--sky);color:var(--black);padding:5px 14px;border-radius:999px;font-size:.95rem;font-weight:500}
+
+/* education + contact */
+.edu h3{font-size:1.4rem;color:var(--black)}
+.edu p{margin-top:4px}
+.contact{background:var(--black);color:var(--white);text-align:left}
+.contact h2{color:var(--sky)}
+.contact p{max-width:52ch;color:#d6e6f1;margin-bottom:26px}
+.contact .links{display:grid;gap:10px;margin-top:8px}
+.contact .links a{color:var(--sky);font-weight:600;text-underline-offset:5px}
+footer{background:var(--black);color:#8fb3cc;text-align:center;padding:22px;font-size:.9rem;border-top:1px solid #222}
+
+@media (max-width:800px){
+  nav ul{gap:14px;font-size:.85rem}
+  .hero .wrap{grid-template-columns:1fr}
+  .photo{width:180px;height:180px;font-size:3.2rem;justify-self:start;order:-1}
+  .facts .wrap,.grid2,.skillgrid{grid-template-columns:1fr}
+}
+@media (max-width:480px){nav ul li:nth-child(n+4){display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Kent Tan</a>
+    <ul>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1>Kent Andrei Dominique Tan</h1>
+      <p class="role">IT Support and Service Desk</p>
+      <p class="lead">I help teams stay productive by solving technical problems fast. I have supported Australian clients through Zendesk, managed user accounts and access, and built HubSpot workflows and documentation.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="kent_tan_resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+    <div class="photo" aria-label="Photo of Kent Tan">
+      KT
+      <img src="kent_pic.jpg" alt="Kent Andrei Dominique Tan" onerror="this.remove()">
+      
+    </div>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="wrap">
+    <div><strong>2 years</strong><span>of IT and administrative support</span></div>
+    <div><strong>Tier 1 support</strong><span>for Australian clients, remote</span></div>
+    <div><strong>Zendesk and HubSpot</strong><span>service desk and CRM tools</span></div>
+  </div>
+</div>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <article class="job">
+        <h3>Administrator Assistant / IT Support</h3>
+        <p class="org">Jirsch Sutherland Philippines Inc.</p>
+        <p class="when">April 2024 to July 2026</p>
+        <ul>
+          <li>Delivered Tier 1 IT and administrative support for Australian clients through Zendesk.</li>
+          <li>Managed user accounts, access permissions and ticket workflows, and handled remote troubleshooting.</li>
+          <li>Generated service desk performance reports.</li>
+          <li>Supported the HubSpot implementation by building workflows and forms, and writing system documentation, onboarding guides and knowledge base articles.</li>
+        </ul>
+      </article>
+      <article class="job">
+        <h3>Technology Intern</h3>
+        <p class="org">Illustrados Creative and Technology Inc.</p>
+        <p class="when">December 2021 to April 2022</p>
+        <ul>
+          <li>Completed 248+ hours of on-the-job training providing technical and administrative support.</li>
+          <li>Configured development environments for Node.js and Angular projects.</li>
+          <li>Wrote technical articles and website documentation while applying Agile methods.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <div class="grid2">
+      <article class="card">
+        <h3>BilMagic Inventory and B2B Distributor System</h3>
+        <span class="tag">Data and QA</span>
+        <p>A prototype that lets the supplier, BilMagic, organize stock and contact distributors about business.</p>
+        <ul>
+          <li>Low stock alerts</li>
+          <li>Chat per order or return</li>
+          <li>Pay later and consignment system</li>
+          <li>Store performance monitoring</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>X-Mech: On-Demand Vehicle Express Repair Service</h3>
+        <span class="tag">Research and Documentation Lead</span>
+        <p>Capstone project. I led the research and documentation that supported the team's design and development.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills and tools</h2>
+    <div class="skillgrid">
+      <div>
+        <h3>Support skills</h3>
+        <ul class="chips">
+          <li>Service Desk Support</li>
+          <li>End-User Support</li>
+          <li>User Onboarding and Offboarding</li>
+          <li>Remote Troubleshooting</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Technical skills</h3>
+        <ul class="chips">
+          <li>Software Development</li>
+          <li>Database Management</li>
+          <li>AI Prompt Engineering</li>
+          <li>Java</li>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Apps and tools</h3>
+        <ul class="chips">
+          <li>Zendesk</li>
+          <li>HubSpot</li>
+          <li>Figma</li>
+          <li>Microsoft Office</li>
+          <li>Google Workspace</li>
+          <li>Claude, ChatGPT, Gemini</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt edu">
+  <div class="wrap">
+    <h2>Education</h2>
+    <h3>BS in Information Technology</h3>
+    <p>Mapúa University, Makati · 2018 to 2023</p>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's work together</h2>
+    <p>I'm open to IT support and service desk roles. Send me a message and I'll reply as soon as I can.</p>
+    <div class="links">
+      <a href="mailto:kentmtan@gmail.com">kentmtan@gmail.com</a>
+      <a href="tel:+639271807898">0927 180 7898</a>
+      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" rel="noopener">LinkedIn</a>
+      <span>Cavite, Philippines</span>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr">2026</span> Kent Andrei Dominique Tan</footer>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>
